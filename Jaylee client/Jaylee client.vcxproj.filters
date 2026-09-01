@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MainWindow.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="MainWindow.idl" />
+    <Midl Include="App.idl" />
+    <Midl Include="XamlMetaDataProvider.idl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+    <ClCompile Include="client\logic\autorun.cpp" />
+    <ClCompile Include="client\logic\buttonsLogic.cpp" />
+    <ClCompile Include="client\logic\strategyAutorun.cpp" />
+    <ClCompile Include="client\logic\workInTray.cpp" />
+    <ClCompile Include="client\visual\settings.cpp" />
+    <ClCompile Include="client\JayleeClient.cpp" />
+    <ClCompile Include="client\visual\settingsButtons.cpp" />
+    <ClCompile Include="client\logic\settingsButtonsLogicImpl.cpp" />
+    <ClCompile Include="client\logic\hiddenWinwsStarter.cpp" />
+    <ClCompile Include="client\logic\configSystem.cpp" />
+    <ClCompile Include="Generated Files\XamlTypeInfo.g.cpp" />
+    <ClCompile Include="Generated Files\XamlTypeInfo.Impl.g.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="XamlMetaDataProvider.cpp" />
+    <ClCompile Include="client\visual\window.cpp" />
+    <ClCompile Include="client\visual\buttons.cpp" />
+    <ClCompile Include="client\visual\aboutWindow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="client\logic\autorun.h" />
+    <ClInclude Include="client\logic\buttonsLogic.h" />
+    <ClInclude Include="client\logic\strategyAutorun.h" />
+    <ClInclude Include="client\logic\workInTray.h" />
+    <ClInclude Include="client\visual\buttons.h" />
+    <ClInclude Include="client\visual\settings.h" />
+    <ClInclude Include="client\visual\settingsButtons.h" />
+    <ClInclude Include="client\visual\window.h" />
+    <ClInclude Include="client\JayleeClient.h" />
+    <ClInclude Include="client\logic\hiddenWinwsStarter.h" />
+    <ClInclude Include="client\logic\configSystem.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="client\visual\aboutWindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{6e0b9b46-8686-48a2-adbd-3a5dadb456a1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="readme.txt" />
+    <Text Include="client\zapret\utils\targets.txt" />
+    <Text Include="client\zapret\lists\ipset-all.txt" />
+    <Text Include="client\zapret\lists\ipset-exclude.txt" />
+    <Text Include="client\zapret\lists\ipset-exclude-user.txt" />
+    <Text Include="client\zapret\lists\list-exclude.txt" />
+    <Text Include="client\zapret\lists\list-exclude-user.txt" />
+    <Text Include="client\zapret\lists\list-general.txt" />
+    <Text Include="client\zapret\lists\list-general-user.txt" />
+    <Text Include="client\zapret\lists\list-google.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="client\zapret\bin\ACTIVE_DISCORD_UDP.bin" />
+    <None Include="client\zapret\bin\ACTIVE_GAME_UDP.bin" />
+    <None Include="client\zapret\bin\quic_initial_4pda.to.bin" />
+    <None Include="client\zapret\bin\quic_initial_dbankcloud_ru.bin" />
+    <None Include="client\zapret\bin\quic_initial_steamcommunity_com.bin" />
+    <None Include="client\zapret\bin\quic_initial_tencent_com.bin" />
+    <None Include="client\zapret\bin\quic_initial_www_google_com.bin" />
+    <None Include="client\zapret\bin\stun.bin" />
+    <None Include="client\zapret\bin\stun2.bin" />
+    <None Include="client\zapret\bin\tls_clienthello_4pda_to.bin" />
+    <None Include="client\zapret\bin\tls_clienthello_max_ru.bin" />
+    <None Include="client\zapret\bin\tls_clienthello_www_google_com.bin" />
+    <None Include="client\zapret\general (ALT).bat" />
+    <None Include="client\zapret\general (ALT2).bat" />
+    <None Include="client\zapret\general (ALT3).bat" />
+    <None Include="client\zapret\general (ALT4).bat" />
+    <None Include="client\zapret\general (ALT5).bat" />
+    <None Include="client\zapret\general (ALT6).bat" />
+    <None Include="client\zapret\general (ALT7).bat" />
+    <None Include="client\zapret\general (ALT8).bat" />
+    <None Include="client\zapret\general (ALT9).bat" />
+    <None Include="client\zapret\general (ALT10).bat" />
+    <None Include="client\zapret\general (ALT11).bat" />
+    <None Include="client\zapret\general (ALT12).bat" />
+    <None Include="client\zapret\general (EXP).bat" />
+    <None Include="client\zapret\general (FAKE TLS AUTO ALT).bat" />
+    <None Include="client\zapret\general (FAKE TLS AUTO ALT2).bat" />
+    <None Include="client\zapret\general (FAKE TLS AUTO ALT3).bat" />
+    <None Include="client\zapret\general (FAKE TLS AUTO).bat" />
+    <None Include="client\zapret\general (SIMPLE FAKE ALT).bat" />
+    <None Include="client\zapret\general (SIMPLE FAKE ALT2).bat" />
+    <None Include="client\zapret\general (SIMPLE FAKE).bat" />
+    <None Include="client\zapret\general.bat" />
+    <None Include="client\zapret\service.bat" />
+    <None Include="client\zapret\utils\check_updates.enabled" />
+    <None Include="client\zapret\utils\game_filter.enabled" />
+    <None Include="client\zapret\utils\test zapret.ps1" />
+    <None Include="client\zapret\lists\ipset-all.txt.backup" />
+    <None Include="client\zapret\bin\cygwin1.dll" />
+    <None Include="client\zapret\bin\WinDivert.dll" />
+    <None Include="client\zapret\bin\WinDivert64.sys" />
+    <None Include="client\zapret\bin\winws.exe" />
+    <None Include="Directory.Build.props" />
+    <None Include="Directory.Build.targets" />
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="$(MSBuildThisFileDirectory)..\..\natvis\wil.natvis" />
+    <Natvis Include="$(MSBuildThisFileDirectory)..\..\natvis\wil.natstepfilter" />
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="client\resources.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="client\app.ico" />
+  </ItemGroup>
+</Project>

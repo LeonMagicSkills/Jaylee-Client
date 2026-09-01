@@ -1,0 +1,10 @@
+<Solution>
+  <Configurations>
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Jaylee client/Jaylee client.vcxproj" Id="6e0b9b46-8686-48a2-adbd-3a5dadb456a1">
+    <Deploy />
+  </Project>
+</Solution>
