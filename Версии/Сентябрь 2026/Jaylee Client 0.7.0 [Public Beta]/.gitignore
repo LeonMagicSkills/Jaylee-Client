@@ -1,0 +1,5 @@
+*.pch 
+*.pdb 
+[Xx]64/ 
+Generated Files/ 
+packages/ 

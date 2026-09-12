@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <!-- Увеличение внутренней кучи компилятора для всех проектов в дереве. -->
+  <ItemDefinitionGroup>
+	<ClCompile>
+	  <!-- Увеличение внутренней кучи компилятора для PCH. Если 200 не хватает, возьмём 300. -->
+	  <AdditionalOptions>%(AdditionalOptions) /Zm2000</AdditionalOptions>
+	</ClCompile>
+  </ItemDefinitionGroup>
+  <!-- Отключаем глобально PCH для проекта, чтобы избежать генерации тяжёлого PCH на этой машине -->
+  <PropertyGroup>
+	<PrecompiledHeader>NotUsing</PrecompiledHeader>
+	<PreferredToolArchitecture>x64</PreferredToolArchitecture>
+	<WindowsAppSdkBootstrapInitialize>true</WindowsAppSdkBootstrapInitialize>
+  </PropertyGroup>
+  <!-- Подавление специфических предупреждений сборки/линковщика -->
+  <PropertyGroup>
+	<!-- Подавить MSBuild предупреждение о дубликатах имен файлов в выводе (MSB8027) -->
+	<NoWarn>$(NoWarn);MSB8027</NoWarn>
+  </PropertyGroup>
+  <!-- Подавление предупреждений линковщика (например LNK4042) -->
+  <ItemDefinitionGroup>
+	<Link>
+	  <!-- Добавляем код предупреждения линковщика 4042 в игнорируемые -->
+	  <IgnoreSpecificWarnings>$(IgnoreSpecificWarnings);4042</IgnoreSpecificWarnings>
+	</Link>
+  </ItemDefinitionGroup>
+  <!-- Ensure unique object file names to avoid MSB8027 when multiple sources share the same filename -->
+  <PropertyGroup>
+	<UseUniqueObjectFileNames>true</UseUniqueObjectFileNames>
+  </PropertyGroup>
+
+  <!-- Установим значения OutputPath/BaseOutputPath/OutDir/IntDir для распространённых конфигураций,
+	   чтобы избежать ошибки MSBuild о незаданном OutputPath при сборке (например Release|x64).
+	   Эти значения действуют как дефолт и могут быть переопределены в .vcxproj при необходимости. -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+	<BaseOutputPath>$(SolutionDir)bin\</BaseOutputPath>
+	<OutputPath>$(BaseOutputPath)$(Configuration)\$(Platform)\</OutputPath>
+	<OutDir>$(OutputPath)</OutDir>
+	<IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+	<BaseOutputPath>$(SolutionDir)bin\</BaseOutputPath>
+	<OutputPath>$(BaseOutputPath)$(Configuration)\$(Platform)\</OutputPath>
+	<OutDir>$(OutputPath)</OutDir>
+	<IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+	<BaseOutputPath>$(SolutionDir)bin\</BaseOutputPath>
+	<OutputPath>$(BaseOutputPath)$(Configuration)\$(Platform)\</OutputPath>
+	<OutDir>$(OutputPath)</OutDir>
+	<IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+	<BaseOutputPath>$(SolutionDir)bin\</BaseOutputPath>
+	<OutputPath>$(BaseOutputPath)$(Configuration)\$(Platform)\</OutputPath>
+	<OutDir>$(OutputPath)</OutDir>
+	<IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+	<BaseOutputPath>$(SolutionDir)bin\</BaseOutputPath>
+	<OutputPath>$(BaseOutputPath)$(Configuration)\$(Platform)\</OutputPath>
+	<OutDir>$(OutputPath)</OutDir>
+	<IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+	<BaseOutputPath>$(SolutionDir)bin\</BaseOutputPath>
+	<OutputPath>$(BaseOutputPath)$(Configuration)\$(Platform)\</OutputPath>
+	<OutDir>$(OutputPath)</OutDir>
+	<IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+
+  <!-- Увеличиваем лимит компилятора для PCH. Если билд всё ещё жалуется на нехватку памяти,
+	   можно вернуть PCH и настроить /Zm отдельно. -->
+</Project>
+
+
+

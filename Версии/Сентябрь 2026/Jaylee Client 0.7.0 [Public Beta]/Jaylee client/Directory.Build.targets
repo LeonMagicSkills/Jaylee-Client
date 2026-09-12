@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <!-- Disable precompiled headers for heavy/generated files to avoid PCH memory exhaustion -->
+  <ItemGroup>
+	<ClCompile Update="App.xaml.cpp">
+	  <PrecompiledHeader>NotUsing</PrecompiledHeader>
+	</ClCompile>
+	<ClCompile Update="MainWindow.xaml.cpp">
+	  <PrecompiledHeader>NotUsing</PrecompiledHeader>
+	</ClCompile>
+	<!-- Ensure the generated module.g.cpp is compiled exactly once. Adjust PCH setting for the generated file. -->
+	<ClCompile Update="$(GeneratedFilesDir)module.g.cpp">
+	  <PrecompiledHeader>NotUsing</PrecompiledHeader>
+	</ClCompile>
+	<ClCompile Update="Generated Files\XamlTypeInfo.Impl.g.cpp">
+	  <PrecompiledHeader>NotUsing</PrecompiledHeader>
+	</ClCompile>
+	<ClCompile Update="Generated Files\App.xaml.g.cpp">
+	  <PrecompiledHeader>NotUsing</PrecompiledHeader>
+	</ClCompile>
+	<ClCompile Update="client\visual\buttons.cpp">
+	  <PrecompiledHeader>NotUsing</PrecompiledHeader>
+	</ClCompile>
+	<ClCompile Update="client\visual\window.cpp">
+	  <PrecompiledHeader>NotUsing</PrecompiledHeader>
+	</ClCompile>
+	<ClCompile Update="client\visual\settings.cpp">
+	  <PrecompiledHeader>NotUsing</PrecompiledHeader>
+	</ClCompile>
+	<ClCompile Update="client\visual\settingsButtons.cpp">
+	  <PrecompiledHeader>NotUsing</PrecompiledHeader>
+	</ClCompile>
+	<ClCompile Update="client\logic\workInTray.cpp">
+	  <PrecompiledHeader>NotUsing</PrecompiledHeader>
+	</ClCompile>
+	<ClCompile Update="client\logic\strategyAutorun.cpp">
+	  <PrecompiledHeader>NotUsing</PrecompiledHeader>
+	</ClCompile>
+	<ClCompile Update="client\logic\settingsButtonsLogicImpl.cpp">
+	  <PrecompiledHeader>NotUsing</PrecompiledHeader>
+	</ClCompile>
+	<ClCompile Update="client\logic\buttonsLogic.cpp">
+	  <PrecompiledHeader>NotUsing</PrecompiledHeader>
+	</ClCompile>
+	<ClCompile Update="Generated Files\*.g.cpp">
+	  <PrecompiledHeader>NotUsing</PrecompiledHeader>
+	</ClCompile>
+  </ItemGroup>
+</Project>

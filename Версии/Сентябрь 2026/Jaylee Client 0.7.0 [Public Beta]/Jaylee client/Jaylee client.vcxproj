@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Windows.SDK.BuildTools.10.0.28000.2526\build\Microsoft.Windows.SDK.BuildTools.props" Condition="Exists('..\packages\Microsoft.Windows.SDK.BuildTools.10.0.28000.2526\build\Microsoft.Windows.SDK.BuildTools.props')" />
+  <Import Project="..\packages\Microsoft.Windows.CppWinRT.3.0.260715.1\build\native\Microsoft.Windows.CppWinRT.props" Condition="Exists('..\packages\Microsoft.Windows.CppWinRT.3.0.260715.1\build\native\Microsoft.Windows.CppWinRT.props')" />
+  <Import Project="..\packages\Microsoft.WindowsAppSDK.2.3.1\build\native\Microsoft.WindowsAppSDK.props" Condition="Exists('..\packages\Microsoft.WindowsAppSDK.2.3.1\build\native\Microsoft.WindowsAppSDK.props')" />
+  <Import Project="..\packages\Microsoft.WindowsAppSDK.WinUI.2.3.0\build\native\Microsoft.WindowsAppSDK.WinUI.props" Condition="Exists('..\packages\Microsoft.WindowsAppSDK.WinUI.2.3.0\build\native\Microsoft.WindowsAppSDK.WinUI.props')" />
+  <Import Project="..\packages\Microsoft.WindowsAppSDK.Widgets.2.0.5\build\native\Microsoft.WindowsAppSDK.Widgets.props" Condition="Exists('..\packages\Microsoft.WindowsAppSDK.Widgets.2.0.5\build\native\Microsoft.WindowsAppSDK.Widgets.props')" />
+  <Import Project="..\packages\Microsoft.WindowsAppSDK.Runtime.2.3.1\build\native\Microsoft.WindowsAppSDK.Runtime.props" Condition="Exists('..\packages\Microsoft.WindowsAppSDK.Runtime.2.3.1\build\native\Microsoft.WindowsAppSDK.Runtime.props')" />
+  <Import Project="..\packages\Microsoft.WindowsAppSDK.ML.2.1.74\build\native\Microsoft.WindowsAppSDK.ML.props" Condition="Exists('..\packages\Microsoft.WindowsAppSDK.ML.2.1.74\build\native\Microsoft.WindowsAppSDK.ML.props')" />
+  <Import Project="..\packages\Microsoft.WindowsAppSDK.AI.2.3.4\build\native\Microsoft.WindowsAppSDK.AI.props" Condition="Exists('..\packages\Microsoft.WindowsAppSDK.AI.2.3.4\build\native\Microsoft.WindowsAppSDK.AI.props')" />
+  <Import Project="..\packages\Microsoft.WindowsAppSDK.Foundation.2.3.5\build\native\Microsoft.WindowsAppSDK.Foundation.props" Condition="Exists('..\packages\Microsoft.WindowsAppSDK.Foundation.2.3.5\build\native\Microsoft.WindowsAppSDK.Foundation.props')" />
+  <Import Project="..\packages\Microsoft.WindowsAppSDK.InteractiveExperiences.2.1.3\build\native\Microsoft.WindowsAppSDK.InteractiveExperiences.props" Condition="Exists('..\packages\Microsoft.WindowsAppSDK.InteractiveExperiences.2.1.3\build\native\Microsoft.WindowsAppSDK.InteractiveExperiences.props')" />
+  <Import Project="..\packages\Microsoft.WindowsAppSDK.DWrite.2.1.0\build\Microsoft.WindowsAppSDK.DWrite.props" Condition="Exists('..\packages\Microsoft.WindowsAppSDK.DWrite.2.1.0\build\Microsoft.WindowsAppSDK.DWrite.props')" />
+  <Import Project="..\packages\Microsoft.WindowsAppSDK.Base.2.0.4\build\native\Microsoft.WindowsAppSDK.Base.props" Condition="Exists('..\packages\Microsoft.WindowsAppSDK.Base.2.0.4\build\native\Microsoft.WindowsAppSDK.Base.props')" />
+  <Import Project="..\packages\Microsoft.Windows.SDK.BuildTools.MSIX.1.7.251221100\build\Microsoft.Windows.SDK.BuildTools.MSIX.props" Condition="Exists('..\packages\Microsoft.Windows.SDK.BuildTools.MSIX.1.7.251221100\build\Microsoft.Windows.SDK.BuildTools.MSIX.props')" />
+  <Import Project="..\packages\Microsoft.Windows.AI.MachineLearning.2.1.74\build\native\Microsoft.Windows.AI.MachineLearning.props" Condition="Exists('..\packages\Microsoft.Windows.AI.MachineLearning.2.1.74\build\native\Microsoft.Windows.AI.MachineLearning.props')" />
+  <PropertyGroup Label="Globals">
+    <CppWinRTOptimized>true</CppWinRTOptimized>
+    <CppWinRTRootNamespaceAutoMerge>true</CppWinRTRootNamespaceAutoMerge>
+    <MinimalCoreWin>true</MinimalCoreWin>
+    <ProjectGuid>{6e0b9b46-8686-48a2-adbd-3a5dadb456a1}</ProjectGuid>
+    <ProjectName>Jaylee client</ProjectName>
+    <RootNamespace>Jaylee_client</RootNamespace>
+    <!--
+      $(TargetName) should be same as $(RootNamespace) so that the produced binaries (.exe/.pri/etc.)
+      have a name that matches the .winmd
+    -->
+    <TargetName>$(RootNamespace)</TargetName>
+    <DefaultLanguage>ru-RU</DefaultLanguage>
+    <MinimumVisualStudioVersion>16.0</MinimumVisualStudioVersion>
+    <AppContainerApplication>false</AppContainerApplication>
+    <AppxPackage>false</AppxPackage>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.17763.0</WindowsTargetPlatformMinVersion>
+    <UseWinUI>true</UseWinUI>
+    <WinUISDKReferences>false</WinUISDKReferences>
+    <EnableMsixTooling>false</EnableMsixTooling>
+    <DisableXbfGeneration>true</DisableXbfGeneration>
+    <GenerateLibraryLayout>true</GenerateLibraryLayout>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' &gt;= '18.0'">v145</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' &lt; '18.0'">v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <DesktopCompatible>true</DesktopCompatible>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Release'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir);client;$(ProjectDir)Generated Files;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)pch.pch</PrecompiledHeaderOutputFile>
+      <WarningLevel>Level4</WarningLevel>
+      <LanguageStandard Condition="'$(VisualStudioVersion)' &gt;= '18.0'">stdcpp20</LanguageStandard>
+      <LanguageStandard Condition="'$(VisualStudioVersion)' &lt; '18.0'">stdcpp17</LanguageStandard>
+      <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
+    <ClCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup Condition="'$(WindowsPackageType)'!='None' and Exists('Package.appxmanifest')">
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="client\JayleeClient.h" />
+    <ClInclude Include="client\logic\autorun.h" />
+    <ClInclude Include="client\logic\buttonsLogic.h" />
+    <ClInclude Include="client\logic\configSystem.h" />
+    <ClInclude Include="client\logic\hiddenWinwsStarter.h" />
+    <ClInclude Include="client\logic\strategyAutorun.h" />
+    <ClInclude Include="client\logic\workInTray.h" />
+    <ClInclude Include="client\visual\aboutWindow.h" />
+    <ClInclude Include="client\visual\buttons.h" />
+    <ClInclude Include="client\visual\settings.h" />
+    <ClInclude Include="client\visual\settingsButtons.h" />
+    <ClInclude Include="client\visual\window.h" />
+    <ClInclude Include="App.xaml.h">
+      <DependentUpon>App.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="MainWindow.xaml.h">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="client\JayleeClient.cpp" />
+    <ClCompile Include="client\logic\autorun.cpp" />
+    <ClCompile Include="client\logic\buttonsLogic.cpp" />
+    <ClCompile Include="client\logic\configSystem.cpp" />
+    <ClCompile Include="client\logic\hiddenWinwsStarter.cpp" />
+    <ClCompile Include="client\logic\settingsButtonsLogicImpl.cpp" />
+    <ClCompile Include="client\logic\strategyAutorun.cpp" />
+    <ClCompile Include="client\logic\workInTray.cpp" />
+    <ClCompile Include="client\visual\aboutWindow.cpp" />
+    <ClCompile Include="client\visual\buttons.cpp" />
+    <ClCompile Include="client\visual\settings.cpp" />
+    <ClCompile Include="client\visual\settingsButtons.cpp" />
+    <ClCompile Include="App.xaml.cpp">
+      <DependentUpon>App.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="client\visual\window.cpp" />
+    <ClCompile Include="MainWindow.xaml.cpp">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Generated Files\XamlTypeInfo.g.cpp" />
+    <ClCompile Include="Generated Files\XamlTypeInfo.Impl.g.cpp" />
+    <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="XamlMetaDataProvider.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="MainWindow.idl">
+      <SubType>Code</SubType>
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Midl>
+    <Midl Include="App.idl">
+      <SubType>Code</SubType>
+    </Midl>
+    <Midl Include="XamlMetaDataProvider.idl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="client\zapret\lists\ipset-all.txt" />
+    <Text Include="client\zapret\lists\ipset-exclude-user.txt" />
+    <Text Include="client\zapret\lists\ipset-exclude.txt" />
+    <Text Include="client\zapret\lists\list-exclude-user.txt" />
+    <Text Include="client\zapret\lists\list-exclude.txt" />
+    <Text Include="client\zapret\lists\list-general-user.txt" />
+    <Text Include="client\zapret\lists\list-general.txt" />
+    <Text Include="client\zapret\lists\list-google.txt" />
+    <Text Include="client\zapret\utils\targets.txt" />
+    <Text Include="readme.txt">
+      <DeploymentContent>false</DeploymentContent>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\LockScreenLogo.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\SplashScreen.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Square150x150Logo.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Square44x44Logo.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\StoreLogo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Wide310x150Logo.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <!--
+    Defining the "Msix" ProjectCapability here allows the Single-project MSIX Packaging
+    Tools extension to be activated for this project even if the Windows App SDK Nuget
+    package has not yet been restored.
+  -->
+  <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
+    <ProjectCapability Include="Msix" />
+  </ItemGroup>
+  <!--
+    Defining the "HasPackageAndPublishMenuAddedByProject" property here allows the Solution
+    Explorer "Package and Publish" context menu entry to be enabled for this project even if
+    the Windows App SDK Nuget package has not yet been restored.
+  -->
+  <ItemGroup>
+    <None Include="client\zapret\bin\ACTIVE_DISCORD_UDP.bin" />
+    <None Include="client\zapret\bin\ACTIVE_GAME_UDP.bin" />
+    <None Include="client\zapret\bin\cygwin1.dll" />
+    <None Include="client\zapret\bin\quic_initial_4pda.to.bin" />
+    <None Include="client\zapret\bin\quic_initial_dbankcloud_ru.bin" />
+    <None Include="client\zapret\bin\quic_initial_steamcommunity_com.bin" />
+    <None Include="client\zapret\bin\quic_initial_tencent_com.bin" />
+    <None Include="client\zapret\bin\quic_initial_www_google_com.bin" />
+    <None Include="client\zapret\bin\stun.bin" />
+    <None Include="client\zapret\bin\stun2.bin" />
+    <None Include="client\zapret\bin\tls_clienthello_4pda_to.bin" />
+    <None Include="client\zapret\bin\tls_clienthello_max_ru.bin" />
+    <None Include="client\zapret\bin\tls_clienthello_www_google_com.bin" />
+    <None Include="client\zapret\bin\WinDivert.dll" />
+    <None Include="client\zapret\bin\WinDivert64.sys" />
+    <None Include="client\zapret\bin\winws.exe" />
+    <None Include="client\zapret\general (ALT).bat" />
+    <None Include="client\zapret\general (ALT10).bat" />
+    <None Include="client\zapret\general (ALT11).bat" />
+    <None Include="client\zapret\general (ALT12).bat" />
+    <None Include="client\zapret\general (ALT2).bat" />
+    <None Include="client\zapret\general (ALT3).bat" />
+    <None Include="client\zapret\general (ALT4).bat" />
+    <None Include="client\zapret\general (ALT5).bat" />
+    <None Include="client\zapret\general (ALT6).bat" />
+    <None Include="client\zapret\general (ALT7).bat" />
+    <None Include="client\zapret\general (ALT8).bat" />
+    <None Include="client\zapret\general (ALT9).bat" />
+    <None Include="client\zapret\general (EXP).bat" />
+    <None Include="client\zapret\general (FAKE TLS AUTO ALT).bat" />
+    <None Include="client\zapret\general (FAKE TLS AUTO ALT2).bat" />
+    <None Include="client\zapret\general (FAKE TLS AUTO ALT3).bat" />
+    <None Include="client\zapret\general (FAKE TLS AUTO).bat" />
+    <None Include="client\zapret\general (SIMPLE FAKE ALT).bat" />
+    <None Include="client\zapret\general (SIMPLE FAKE ALT2).bat" />
+    <None Include="client\zapret\general (SIMPLE FAKE).bat" />
+    <None Include="client\zapret\general.bat" />
+    <None Include="client\zapret\lists\ipset-all.txt.backup" />
+    <None Include="client\zapret\service.bat" />
+    <None Include="client\zapret\utils\check_updates.enabled" />
+    <None Include="client\zapret\utils\game_filter.enabled" />
+    <None Include="client\zapret\utils\test zapret.ps1" />
+    <None Include="Directory.Build.props" />
+    <None Include="Directory.Build.targets" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="client\resources.rc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="client\app.ico" />
+  </ItemGroup>
+  <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
+    <HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\Microsoft.Web.WebView2.1.0.3719.77\build\native\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.3719.77\build\native\Microsoft.Web.WebView2.targets')" />
+    <Import Project="..\packages\Microsoft.Windows.AI.MachineLearning.2.1.74\build\native\Microsoft.Windows.AI.MachineLearning.targets" Condition="Exists('..\packages\Microsoft.Windows.AI.MachineLearning.2.1.74\build\native\Microsoft.Windows.AI.MachineLearning.targets')" />
+    <Import Project="..\packages\Microsoft.Windows.SDK.BuildTools.MSIX.1.7.251221100\build\Microsoft.Windows.SDK.BuildTools.MSIX.targets" Condition="Exists('..\packages\Microsoft.Windows.SDK.BuildTools.MSIX.1.7.251221100\build\Microsoft.Windows.SDK.BuildTools.MSIX.targets')" />
+    <Import Project="..\packages\Microsoft.WindowsAppSDK.Base.2.0.4\build\native\Microsoft.WindowsAppSDK.Base.targets" Condition="Exists('..\packages\Microsoft.WindowsAppSDK.Base.2.0.4\build\native\Microsoft.WindowsAppSDK.Base.targets')" />
+    <Import Project="..\packages\Microsoft.WindowsAppSDK.DWrite.2.1.0\build\Microsoft.WindowsAppSDK.DWrite.targets" Condition="Exists('..\packages\Microsoft.WindowsAppSDK.DWrite.2.1.0\build\Microsoft.WindowsAppSDK.DWrite.targets')" />
+    <Import Project="..\packages\Microsoft.WindowsAppSDK.InteractiveExperiences.2.1.3\build\native\Microsoft.WindowsAppSDK.InteractiveExperiences.targets" Condition="Exists('..\packages\Microsoft.WindowsAppSDK.InteractiveExperiences.2.1.3\build\native\Microsoft.WindowsAppSDK.InteractiveExperiences.targets')" />
+    <Import Project="..\packages\Microsoft.WindowsAppSDK.Foundation.2.3.5\build\native\Microsoft.WindowsAppSDK.Foundation.targets" Condition="Exists('..\packages\Microsoft.WindowsAppSDK.Foundation.2.3.5\build\native\Microsoft.WindowsAppSDK.Foundation.targets')" />
+    <Import Project="..\packages\Microsoft.WindowsAppSDK.AI.2.3.4\build\native\Microsoft.WindowsAppSDK.AI.targets" Condition="Exists('..\packages\Microsoft.WindowsAppSDK.AI.2.3.4\build\native\Microsoft.WindowsAppSDK.AI.targets')" />
+    <Import Project="..\packages\Microsoft.WindowsAppSDK.ML.2.1.74\build\native\Microsoft.WindowsAppSDK.ML.targets" Condition="Exists('..\packages\Microsoft.WindowsAppSDK.ML.2.1.74\build\native\Microsoft.WindowsAppSDK.ML.targets')" />
+    <Import Project="..\packages\Microsoft.WindowsAppSDK.Runtime.2.3.1\build\native\Microsoft.WindowsAppSDK.Runtime.targets" Condition="Exists('..\packages\Microsoft.WindowsAppSDK.Runtime.2.3.1\build\native\Microsoft.WindowsAppSDK.Runtime.targets')" />
+    <Import Project="..\packages\Microsoft.WindowsAppSDK.Widgets.2.0.5\build\native\Microsoft.WindowsAppSDK.Widgets.targets" Condition="Exists('..\packages\Microsoft.WindowsAppSDK.Widgets.2.0.5\build\native\Microsoft.WindowsAppSDK.Widgets.targets')" />
+    <Import Project="..\packages\Microsoft.WindowsAppSDK.WinUI.2.3.0\build\native\Microsoft.WindowsAppSDK.WinUI.targets" Condition="Exists('..\packages\Microsoft.WindowsAppSDK.WinUI.2.3.0\build\native\Microsoft.WindowsAppSDK.WinUI.targets')" />
+    <Import Project="..\packages\Microsoft.WindowsAppSDK.2.3.1\build\native\Microsoft.WindowsAppSDK.targets" Condition="Exists('..\packages\Microsoft.WindowsAppSDK.2.3.1\build\native\Microsoft.WindowsAppSDK.targets')" />
+    <Import Project="..\packages\Microsoft.Windows.CppWinRT.3.0.260715.1\build\native\Microsoft.Windows.CppWinRT.targets" Condition="Exists('..\packages\Microsoft.Windows.CppWinRT.3.0.260715.1\build\native\Microsoft.Windows.CppWinRT.targets')" />
+    <Import Project="..\packages\Microsoft.Windows.SDK.BuildTools.10.0.28000.2526\build\Microsoft.Windows.SDK.BuildTools.targets" Condition="Exists('..\packages\Microsoft.Windows.SDK.BuildTools.10.0.28000.2526\build\Microsoft.Windows.SDK.BuildTools.targets')" />
+    <Import Project="..\packages\Microsoft.Windows.ImplementationLibrary.1.0.260126.7\build\native\Microsoft.Windows.ImplementationLibrary.targets" Condition="Exists('..\packages\Microsoft.Windows.ImplementationLibrary.1.0.260126.7\build\native\Microsoft.Windows.ImplementationLibrary.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Warning Condition="!Exists('..\packages\Microsoft.Web.WebView2.1.0.3719.77\build\native\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Web.WebView2.1.0.3719.77\build\native\Microsoft.Web.WebView2.targets'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.Windows.AI.MachineLearning.2.1.74\build\native\Microsoft.Windows.AI.MachineLearning.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.AI.MachineLearning.2.1.74\build\native\Microsoft.Windows.AI.MachineLearning.props'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.Windows.AI.MachineLearning.2.1.74\build\native\Microsoft.Windows.AI.MachineLearning.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.AI.MachineLearning.2.1.74\build\native\Microsoft.Windows.AI.MachineLearning.targets'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.Windows.SDK.BuildTools.MSIX.1.7.251221100\build\Microsoft.Windows.SDK.BuildTools.MSIX.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.SDK.BuildTools.MSIX.1.7.251221100\build\Microsoft.Windows.SDK.BuildTools.MSIX.props'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.Windows.SDK.BuildTools.MSIX.1.7.251221100\build\Microsoft.Windows.SDK.BuildTools.MSIX.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.SDK.BuildTools.MSIX.1.7.251221100\build\Microsoft.Windows.SDK.BuildTools.MSIX.targets'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.WindowsAppSDK.Base.2.0.4\build\native\Microsoft.WindowsAppSDK.Base.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WindowsAppSDK.Base.2.0.4\build\native\Microsoft.WindowsAppSDK.Base.props'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.WindowsAppSDK.Base.2.0.4\build\native\Microsoft.WindowsAppSDK.Base.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WindowsAppSDK.Base.2.0.4\build\native\Microsoft.WindowsAppSDK.Base.targets'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.WindowsAppSDK.DWrite.2.1.0\build\Microsoft.WindowsAppSDK.DWrite.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WindowsAppSDK.DWrite.2.1.0\build\Microsoft.WindowsAppSDK.DWrite.props'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.WindowsAppSDK.DWrite.2.1.0\build\Microsoft.WindowsAppSDK.DWrite.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WindowsAppSDK.DWrite.2.1.0\build\Microsoft.WindowsAppSDK.DWrite.targets'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.WindowsAppSDK.InteractiveExperiences.2.1.3\build\native\Microsoft.WindowsAppSDK.InteractiveExperiences.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WindowsAppSDK.InteractiveExperiences.2.1.3\build\native\Microsoft.WindowsAppSDK.InteractiveExperiences.props'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.WindowsAppSDK.InteractiveExperiences.2.1.3\build\native\Microsoft.WindowsAppSDK.InteractiveExperiences.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WindowsAppSDK.InteractiveExperiences.2.1.3\build\native\Microsoft.WindowsAppSDK.InteractiveExperiences.targets'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.WindowsAppSDK.Foundation.2.3.5\build\native\Microsoft.WindowsAppSDK.Foundation.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WindowsAppSDK.Foundation.2.3.5\build\native\Microsoft.WindowsAppSDK.Foundation.props'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.WindowsAppSDK.Foundation.2.3.5\build\native\Microsoft.WindowsAppSDK.Foundation.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WindowsAppSDK.Foundation.2.3.5\build\native\Microsoft.WindowsAppSDK.Foundation.targets'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.WindowsAppSDK.AI.2.3.4\build\native\Microsoft.WindowsAppSDK.AI.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WindowsAppSDK.AI.2.3.4\build\native\Microsoft.WindowsAppSDK.AI.props'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.WindowsAppSDK.AI.2.3.4\build\native\Microsoft.WindowsAppSDK.AI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WindowsAppSDK.AI.2.3.4\build\native\Microsoft.WindowsAppSDK.AI.targets'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.WindowsAppSDK.ML.2.1.74\build\native\Microsoft.WindowsAppSDK.ML.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WindowsAppSDK.ML.2.1.74\build\native\Microsoft.WindowsAppSDK.ML.props'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.WindowsAppSDK.ML.2.1.74\build\native\Microsoft.WindowsAppSDK.ML.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WindowsAppSDK.ML.2.1.74\build\native\Microsoft.WindowsAppSDK.ML.targets'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.WindowsAppSDK.Runtime.2.3.1\build\native\Microsoft.WindowsAppSDK.Runtime.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WindowsAppSDK.Runtime.2.3.1\build\native\Microsoft.WindowsAppSDK.Runtime.props'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.WindowsAppSDK.Runtime.2.3.1\build\native\Microsoft.WindowsAppSDK.Runtime.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WindowsAppSDK.Runtime.2.3.1\build\native\Microsoft.WindowsAppSDK.Runtime.targets'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.WindowsAppSDK.Widgets.2.0.5\build\native\Microsoft.WindowsAppSDK.Widgets.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WindowsAppSDK.Widgets.2.0.5\build\native\Microsoft.WindowsAppSDK.Widgets.props'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.WindowsAppSDK.Widgets.2.0.5\build\native\Microsoft.WindowsAppSDK.Widgets.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WindowsAppSDK.Widgets.2.0.5\build\native\Microsoft.WindowsAppSDK.Widgets.targets'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.WindowsAppSDK.WinUI.2.3.0\build\native\Microsoft.WindowsAppSDK.WinUI.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WindowsAppSDK.WinUI.2.3.0\build\native\Microsoft.WindowsAppSDK.WinUI.props'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.WindowsAppSDK.WinUI.2.3.0\build\native\Microsoft.WindowsAppSDK.WinUI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WindowsAppSDK.WinUI.2.3.0\build\native\Microsoft.WindowsAppSDK.WinUI.targets'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.WindowsAppSDK.2.3.1\build\native\Microsoft.WindowsAppSDK.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WindowsAppSDK.2.3.1\build\native\Microsoft.WindowsAppSDK.props'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.WindowsAppSDK.2.3.1\build\native\Microsoft.WindowsAppSDK.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WindowsAppSDK.2.3.1\build\native\Microsoft.WindowsAppSDK.targets'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.Windows.CppWinRT.3.0.260715.1\build\native\Microsoft.Windows.CppWinRT.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.CppWinRT.3.0.260715.1\build\native\Microsoft.Windows.CppWinRT.props'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.Windows.CppWinRT.3.0.260715.1\build\native\Microsoft.Windows.CppWinRT.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.CppWinRT.3.0.260715.1\build\native\Microsoft.Windows.CppWinRT.targets'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.Windows.SDK.BuildTools.10.0.28000.2526\build\Microsoft.Windows.SDK.BuildTools.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.SDK.BuildTools.10.0.28000.2526\build\Microsoft.Windows.SDK.BuildTools.props'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.Windows.SDK.BuildTools.10.0.28000.2526\build\Microsoft.Windows.SDK.BuildTools.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.SDK.BuildTools.10.0.28000.2526\build\Microsoft.Windows.SDK.BuildTools.targets'))" />
+    <Warning Condition="!Exists('..\packages\Microsoft.Windows.ImplementationLibrary.1.0.260126.7\build\native\Microsoft.Windows.ImplementationLibrary.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.ImplementationLibrary.1.0.260126.7\build\native\Microsoft.Windows.ImplementationLibrary.targets'))" />
+  </Target>
+</Project>
